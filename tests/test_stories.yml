@@ -2,90 +2,35 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
+- story: Teste saudação e pedido de pizza
   steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+  - user: "oi"
+    intent: saudar
+  - action: utter_saudar
+  - user: "gostaria de pedir uma pizza, por favor"
+    intent: pedir_pizza
+  - action: utter_pedir_pizza
+  - user: "uma pizza de calabresa, por favor"
+    intent: especificar_pizza
+      entities: 
+        - sabor: "calabresa"
+  - action: utter_especificar_pizza
+  - user: "Av. Paulista, 999"
+    intent: informar_endereco
+      entities: 
+        - endereco: "Av. Paulista, 999"
+  - action: utter_informar_endereco
+  - user: "isso mesmo"
+    intent: confirmar_pedido
+  - action: utter_confirmar_pedido
 
-- story: happy path 2
+- story: Teste de cancelamento de pedido
   steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
-
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
-
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+  - user: "quero uma pizza de quatro queijos"
+    intent: especificar_pizza
+      entities: 
+        - sabor: "quatro queijos"
+  - action: utter_especificar_pizza
+  - user: "na verdade, cancele o meu pedido"
+    intent: cancelar_pedido
+  - action: utter_cancelar_pedido

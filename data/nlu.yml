@@ -1,91 +1,67 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: saudar
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - boa noite
+    - bom dia, tudo bem?
+    - boa tarde, tudo bem?
+    - boa noite, tudo bem?
+    - oi, tudo bem?
+    - olá, tudo bem?
 
-- intent: goodbye
+- intent: pedir_pizza
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - gostaria de pedir uma pizza
+    - gostaria de pedir uma pizza, por favor
+    - como faço para pedir uma pizza?
+    - quero uma pizza, por favor
+    - pode me ajudar a pedir uma pizza?
+    - quero uma pizza
+    - quero pedir uma pizza
+    - quero encomendar uma pizza
+    - quero fazer um pedido
+    - gostaria de fazer um pedido
 
-- intent: affirm
+- intent: especificar_pizza
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - quero uma pizza de [calabresa](sabor), por favor
+    - uma pizza de [mussarela](sabor)
+    - gostaria de uma pizza de [quatro queijos](sabor)
+    - [frango](sabor)
+    - pode ser de [pepperoni](sabor)
 
-- intent: deny
+- intent: informar_endereco
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - [Av. Paulista, 999](endereco)
+    - entregar em [Rua das Flores, 130](endereco)
+    - o endereco é [Alameda dos Anjos, 222](endereco)
 
-- intent: mood_great
+- intent: confirmar_pedido
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - sim
+    - sim, está tudo certo
+    - isso
+    - claro
+    - confirma
+    - pode confirmar
+    - isso mesmo, pode confirmar
+    - isso mesmo
+    - tudo certo
+    - tudo certo, pode fazer o pedido
 
-- intent: mood_unhappy
+- intent: cancelar_pedido
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - quero cancelar o pedido
+    - quero cancelar
+    - não quero mais a pizza
+    - não quero mais
+    - cancele, por favor
+    - gostaria de cancelar, por favor
+    - desisto do pedido
+    - quero desistir do pedido
+    - na verdade, cancele o meu pedido
